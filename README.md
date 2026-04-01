@@ -40,7 +40,7 @@ This is not a plugin for one tool. It's a markdown file that any AI coding agent
 
 | Platform | How It Works |
 |----------|-------------|
-| **Claude Code** | Installs as a skill — type `/app-matrix:go` |
+| **Claude Code** | Installs as a skill — type `/run-matrix:go` |
 | **Claude Cowork** | Install as a plugin via GitHub URL |
 | **Cursor** | Loads as a rule in `.cursor/rules/` |
 | **Windsurf** | Loads as a rule in `.windsurf/rules/` |
@@ -58,10 +58,10 @@ This is not a plugin for one tool. It's a markdown file that any AI coding agent
 /plugin marketplace add https://github.com/aaronparsons-dev/run-matrix.git
 
 # Install the plugin
-/plugin install app-matrix@run-matrix
+/plugin install run-matrix@run-matrix
 ```
 
-Then type `/app-matrix:go` to run it.
+Then type `/run-matrix:go` to run it.
 
 ### Claude Cowork (desktop app)
 
@@ -85,7 +85,7 @@ Then type `/app-matrix:go` to run it.
 
 **Use it:**
 
-Type `/app-matrix:go` and describe your app idea.
+Type `/run-matrix:go` and describe your app idea.
 
 ### Cursor
 
