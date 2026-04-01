@@ -1,5 +1,5 @@
 ---
-description: "Run the App Decision Matrix — plan an app from idea to production launch"
+description: "Run the App Decision Matrix — plans, builds, and launches your app with self-checking loops from idea to production"
 globs: ""
 alwaysApply: false
 ---

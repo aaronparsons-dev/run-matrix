@@ -1,5 +1,5 @@
 # APP DECISION MATRIX v5.0
-### A runbook for AI agents — from app idea to production launch.
+### A runbook for AI agents — from app idea to launched product.
 **Author:** Aaron E. Parsons
 
 > **AGENT INSTRUCTION — READ THIS FIRST, DO NOT SKIP**
