@@ -1,5 +1,5 @@
 {
-  "name": "run-matrix",
+  "name": "app-matrix",
   "version": "1.0.0",
   "description": "A runbook for AI agents — tell it your app idea and it handles everything from planning through build to production launch. Plans the stack, generates the spec, then guides the build agent phase by phase with self-checking loops until your app is live.",
   "author": {
