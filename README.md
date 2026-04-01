@@ -95,6 +95,44 @@ your-project/
 
 These files aren't the goal. The launched app is the goal. These files are how the agent gets there without cutting corners.
 
+## What's Under the Hood
+
+This isn't a simple prompt. It's a 2,600-line decision engine refined through extensive testing. Here's what it actually does when it runs:
+
+**10 steps before any code is written:**
+
+| Step | What It Does |
+|------|-------------|
+| **Intake** | Figures out who you are (solo builder? team? freelancer?), how technical you are, your budget, and what kind of app you're building |
+| **Classify** | Determines if it's a web app, mobile app, CLI, API, plugin, or some combination — and what category it falls into (AI app, marketplace, SaaS, etc.) |
+| **Plugin Module** | If you're building for Shopify, VS Code, Chrome, Slack, or 11 other platforms — deep-dives into that platform's specific requirements, review processes, and gotchas |
+| **Score** | Rates your app on 6 dimensions (data complexity, AI involvement, real-time needs, scale, auth complexity, compliance) to drive every stack decision |
+| **Stack Selection** | Picks your tech stack based on scores, not trends — then recommends the fewest possible services so you're not managing 10 accounts for an MVP |
+| **Cost Modeling** | Looks up real pricing for every service, calculates your cost per transaction, checks competitor pricing, and suggests your price points with actual margins |
+| **Function Map** | Identifies which parts of your app should use AI and which absolutely should not — auth, payments, and data writes are never left to AI guessing |
+| **Prioritization** | Separates what must exist to launch from what can wait — and defines your MVP as a testable hypothesis, not a feature list |
+| **Anti-Patterns** | Checks for 13 common mistakes that kill apps (using AI where a simple rule works, building for a million users when you have 10, putting security in the wrong layer) |
+| **Launch Infrastructure** | Lists every account you need, every legal document, every config step — with real lead times so you're not stuck waiting on approvals the week you want to launch |
+
+**During the build, the agent can't cut corners:**
+
+- **Self-check loop** runs after every task — five questions including "am I about to say this is done when it's not?"
+- **Prove-it rule** — the agent has to demonstrate each service works with real output, not just claim the code looks right
+- **Production anti-pattern list** — 10 explicit things the agent is never allowed to do (fake auth, in-memory databases, hardcoded keys, skipping error handling)
+- **Wire-on-need** — services get set up when the feature that needs them is being built, not all at once upfront
+- **User Action Blocks** — when you need to do something (create an account, add a payment method), the agent gives you click-by-click instructions with exact URLs
+- **Regression checks** — after wiring each new service, the agent re-tests everything that was working before
+- **Three user checkpoints** — you approve the design, test the core flow, and test the full product before the agent moves on
+- **Document integrity audit** — before any code is written, a 7-category check catches contradictions, missing pieces, and gaps across all the planning docs
+
+**Built for real apps, not demos:**
+
+- Handles compliance (GDPR, HIPAA, accessibility — WCAG 2.1 AA is a legal requirement, not optional)
+- Handles governance (IP ownership, employment contracts, open source licensing)
+- Handles money (real cost modeling, real competitor research, real margin math)
+- Handles launch (DNS, SSL, CI/CD, monitoring, error tracking, legal docs, app store submissions)
+- 6 reference architecture patterns for common app types (AI chat, SaaS dashboard, developer tools, marketplaces, automation, AI agents)
+
 ## License
 
 MIT License — see [LICENSE](LICENSE).
