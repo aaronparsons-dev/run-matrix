@@ -6,7 +6,7 @@
   "plugins": [
     {
       "name": "run-matrix",
-      "source": ".",
+      "source": "./run-matrix",
       "description": "A runbook for AI agents — tell it your app idea and it handles everything from planning through build to production launch. Plans the stack, generates the spec, then guides the build agent phase by phase with self-checking loops until your app is live.",
       "homepage": "https://github.com/aaronparsons-dev/run-matrix"
     }
