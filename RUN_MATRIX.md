@@ -62,74 +62,62 @@ Generate this exact structure. No application code folders — those are created
 - The user may already have accounts, preferences, or experience with specific services. They'll redirect you if so.
 - Never present a menu of equal options. Lead with your pick and move forward.
 
-### ONE QUESTION ROUND
+### QUESTION SEQUENCE
 
-You get one question message total — not one per ask block.
+Ask one question at a time. Send one question per message, wait for the user's response, then move to the next. Do not bundle multiple questions into a single message. Skip any question where the answer is already clear from the user's description.
 
-After reading the app idea, run Steps 1–3 internally. Then send a single message that:
-1. States contextual inferences (surface type, archetype, governance, compliance) — these are observations, not service choices
-2. Infers builder technical level and budget from context — if unclear, asks (see Builder Profile)
-3. States a direction for every service/stack choice with a one-line reason — the user only responds to ones they'd change. Calibrated to technical level and budget. **Must include total account count.**
-4. Asks about brand direction — open question, not a pitch. "Do you have a visual direction in mind?" If not, defer to design phase.
-5. **Infers the revenue model** from the description (e-commerce, subscription, usage-based, hybrid). States it as an inference, not a question. Only asks about pricing details genuinely missing — price range, margin target, what's free vs paid. Do not suggest subscription/SaaS pricing when the user described selling a product.
-6. Asks only what is genuinely blocked beyond the above — 2–5 additional questions maximum
-7. Includes the name question
-8. Includes the existing accounts check
+After reading the app idea, run Steps 1–3 internally. Then walk through the ask blocks in order, covering:
+1. Contextual inferences (surface type, archetype, governance, compliance) — state as observations, ask if they match
+2. Builder technical level and budget — infer from context, ask if unclear (see Builder Profile)
+3. Name — ask or confirm
+4. Revenue model — infer and state, only ask about genuinely missing details
+5. Brand direction — open question, not a pitch
+6. Any remaining blocking questions from the ask blocks (2–5 max)
+7. **Recommended stack — present the full stack and wait for explicit approval** (see STACK APPROVAL GATE in ASK BLOCK 1B)
+8. Existing accounts — ask after stack is approved
 
-After the user responds, **re-evaluate the full stack before generating documents.** If the user redirected any choice (e.g., changed the platform), check whether other decisions still fit. In particular: if the platform changed, reconsider the framework — pick one that deploys cleanly to the new platform. If the database changed, reconsider whether auth/storage are still best served by separate services or are now bundled. Do not carry forward decisions that were made for a different stack.
+After the user responds to all questions and approves the stack, **re-evaluate the full stack before generating documents.** If the user redirected any choice (e.g., changed the platform), check whether other decisions still fit. In particular: if the platform changed, reconsider the framework — pick one that deploys cleanly to the new platform. If the database changed, reconsider whether auth/storage are still best served by separate services or are now bundled. Do not carry forward decisions that were made for a different stack.
 
-Then generate all documents. No second round. If something minor is still unclear, assume, document, and move on.
+Then generate all documents. If something minor is still unclear, assume, document, and move on.
 
-The ask blocks (0, 1, 1B, 1C, 1D, 2, 3) are a checklist of things to consider before composing your single message. Read all of them, then collapse into one message. Remember: contextual inferences (surface, archetype, governance) are stated as observations. All service/stack/provider choices are suggestions with questions — zero exceptions.
+The ask blocks (0, 1, 1B, 1C, 1D, 2, 3) are reference material for composing your questions. Read all of them before starting so you know what to cover. Contextual inferences (surface, archetype, governance) are stated as observations. All service/stack/provider choices are suggestions with questions — zero exceptions.
 
-### Ideal format
+### Example messages
 
+Each of these is a separate message. Wait for a response between each.
+
+**Inferences message:**
 ```
-Here's what I've got so far — a few things to confirm before I generate
-the full planning docs:
-
-[NAME] — do you have a name in mind, or proceed with [Name TBD]?
-
-[WHAT I'M READING FROM YOUR DESCRIPTION — contextual inferences, not service choices:]
+Here's what I'm reading from your description:
 - Surface: web app, consumer-facing
 - Builder: solo project, proprietary, personal GitHub
-- Technical level: [inferred from language used — or ask if unclear]
-[STACK — here's my direction. Jump in on any you'd change, skip the rest.
- Total accounts you'd need: N]
+- Technical level: [inferred]
 
-[PLATFORM]: [X] — covers auth, database, storage[, email, etc.].
+Does this match, or should I adjust anything?
+```
+
+**Stack recommendation message (after all other questions are answered):**
+```
+Here's my recommended stack. Approve, or tell me what you'd change:
+
+Total accounts you'd need: N
+
+[PLATFORM]: [X] — covers auth, database, storage[, etc.].
   One account, one dashboard.
 HOSTING: [X] — [reason].
 PAYMENTS: [X] — [reason].
 [Only additional services the platform can't cover:]
 [SERVICE]: [X] — [reason].
-
-[QUESTIONS — need answers before generating docs:]
-BUDGET: Do you have a monthly budget for infrastructure, or
-  should I optimize for free tiers? [skip if already clear]
-
-PRICING: Revenue model is [inferred from description — e.g.,
-  "e-commerce, you make money on poster sales" or "subscription"].
-  [Ask only what's genuinely unclear — price range, what's free,
-  margin target. Don't suggest models that contradict the description.]
-
-BRAND: Do you have a visual direction in mind — mood, colors,
-  references? If not, we'll figure it out in the design phase.
-
-EXISTING ACCOUNTS: Do you already have any of these set up?
-  [ ] Database / platform account
-  [ ] Payment provider account
-  [ ] AI service account
-  [ ] Domain purchased
 ```
 
 ### Execution sequence
 
 1. Read the user's app idea in full
 2. Run Steps 1–3 internally — extract archetype, surface, domain, AI role, governance, compliance, brand direction
-3. Compose ONE question message
-4. After user responds, run Steps 4–10 and generate all documents
-5. **STOP. Run Step 10 — Handoff. Do not write application code.**
+3. Ask questions from the ask blocks — one question per message, wait for each response, skip what's already clear
+4. Present recommended stack and **wait for explicit approval** before continuing (see STACK APPROVAL GATE)
+5. After stack is approved, run Steps 4–10 and generate all documents
+6. **STOP. Run Step 10 — Handoff. Do not write application code.**
 
 ---
 
@@ -244,7 +232,7 @@ Infer from how the user describes their idea:
 | **Semi-technical** | Some coding experience; comfortable with tutorials | Suggest well-documented services with good GUIs. Consolidation matters more — fewer dashboards to learn. |
 | **Technical** | Developer; comfortable with code, CLI, config | Full range of options. Can handle more services if the tradeoff is worth it. Ask about preferences — they likely have opinions. |
 
-If unclear, include in your ONE question message:
+If unclear, ask during the question sequence:
 ```
 EXPERIENCE: How comfortable are you with code and dev tools?
   This changes what I suggest — more managed vs. more control.
@@ -252,7 +240,7 @@ EXPERIENCE: How comfortable are you with code and dev tools?
 
 #### Monthly infrastructure budget
 
-Infer from context (solo side project = $0, funded startup = flexible). If unclear, include in your ONE question message:
+Infer from context (solo side project = $0, funded startup = flexible). If unclear, ask during the question sequence:
 ```
 BUDGET: Do you have a monthly budget for infrastructure (hosting,
   database, services), or should I optimize for free tiers?
@@ -272,7 +260,7 @@ Budget directly affects service suggestions:
 
 **Not a blocker.** Scaffolding can proceed with `[Name TBD]`. Name validation must be completed before launch, not before code.
 
-Include the name question in your ONE question message:
+Ask the name question during the question sequence:
 ```
 Do you have a name in mind, or should I proceed with [Name TBD] for now?
 ```
@@ -667,7 +655,9 @@ Skip any service the user already specified — don't re-ask what they told you.
 1. **The platform doesn't already cover it.** Check thoroughly — platforms often handle email, error logging, analytics, cron, CDN, and more beyond their headline features.
 2. **The project cannot launch without it.** If it's a nice-to-have, skip it. The user can add it later.
 
-Existing accounts — include at the end of your ONE question message:
+**🛑 STACK APPROVAL GATE — The stack is a suggestion, not a decision. After presenting the stack, you must explicitly ask the user to approve or change it. Do not generate documents or proceed to the next step until the user confirms the stack. Example: "Does this stack look right, or would you change anything?" If the user redirects any choice, re-evaluate the full stack before continuing — a platform change may invalidate framework, auth, or hosting choices.**
+
+Existing accounts — ask after the user approves the stack:
 ```
 Do you already have accounts for any of these?
 [List only services in the chosen stack — 3–5 items max]
@@ -1220,7 +1210,7 @@ Rate each 1–5. State score and reasoning. If uncertain, give a range and note 
 
 ## STEP 4 — STACK SELECTOR
 
-Map axis scores to concrete suggestions. These tables guide what you **suggest** to the user — the user's responses from the ONE QUESTION ROUND are the actual decisions. If the user picked a different service than the table suggests, use the user's choice. State reason for every choice. When axes conflict, higher-risk axis wins.
+Map axis scores to concrete suggestions. These tables guide what you **suggest** to the user — the user's responses from the question sequence are the actual decisions. If the user picked a different service than the table suggests, use the user's choice. State reason for every choice. When axes conflict, higher-risk axis wins.
 
 ### Consolidation check (apply before per-layer tables)
 
@@ -2211,7 +2201,7 @@ _No entries yet._
 
 ### File 7: `.env.example`
 
-Generate this file dynamically based on the services chosen during the ONE QUESTION ROUND. Do not copy a static template — build it from the actual stack.
+Generate this file dynamically based on the services chosen during the question sequence. Do not copy a static template — build it from the actual stack.
 
 ```bash
 # ================================================
@@ -2487,6 +2477,24 @@ If the user says "start building" / "begin" / "go ahead" → read `START.md` and
 ```markdown
 # START — [App Name] Build Sequence
 
+---
+
+## ▶ HOW TO BEGIN THE BUILD
+
+> **Planning is complete. Tell your AI agent to read this file and start building.**
+>
+> | Environment | What to do |
+> |-------------|-----------|
+> | **Claude Cowork** | Type in the chat: `/run-matrix:build` — or type: `Read START.md and begin the build` |
+> | **Claude Code** | Type in the terminal: `/run-matrix:build` — or type: `Read START.md and begin the build` |
+> | **Cursor** | Open this file and tell the agent: `Read this file and begin the build` |
+> | **Windsurf** | Open this file and tell the agent: `Read this file and begin the build` |
+> | **Any other agent** | Tell your agent: `Read START.md and follow the instructions` |
+>
+> The instruction is always the same: **read this file, then build phase by phase.**
+
+---
+
 > **For AI agents**: Read this fully before writing code.
 > **First job: audit, not build.**
 
@@ -2665,7 +2673,7 @@ Do not say "set up Stripe" — give the user every click. Keep building whatever
 
 ## QUICK-START FORMULAS
 
-These are **reference patterns**, not prescribed stacks. The specific services listed are illustrative — use whatever the user confirmed during the ONE QUESTION ROUND. The value of these formulas is the **architecture pattern** (surfaces, nucleus, scores, probabilistic/deterministic split), not the vendor names.
+These are **reference patterns**, not prescribed stacks. The specific services listed are illustrative — use whatever the user confirmed during the question sequence. The value of these formulas is the **architecture pattern** (surfaces, nucleus, scores, probabilistic/deterministic split), not the vendor names.
 
 ### "Chat with your documents" (RAG)
 Surfaces: Web + API. Nucleus: AI-Native. Scores: A3 B5 C2 D2 E2 F2.

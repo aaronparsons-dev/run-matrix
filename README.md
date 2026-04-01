@@ -26,13 +26,27 @@ The build loop keeps running until the app is live — real auth, real database,
 ## How It Works
 
 1. You describe your app idea in plain language
-2. The matrix asks one round of questions — stack preferences, pricing, brand direction
-3. It generates planning docs and START.md
-4. You point your AI agent at START.md: "Read this and build"
+2. The matrix walks you through questions one at a time — stack preferences, pricing, brand direction
+3. It recommends a stack, you approve, it generates planning docs and START.md
+4. You tell your agent to start building (see **Starting the Build** below)
 5. The agent builds phase by phase with checkpoints, self-checks, and verification loops
 6. You review at each checkpoint, test the core flow, approve and continue
 7. The agent keeps going through wiring, features, polish, testing, and launch prep
 8. When the launch checklist is complete and tests pass — your app is live
+
+### Starting the Build
+
+After planning is complete, tell your AI agent to read START.md and build:
+
+| Environment | What to do |
+|-------------|-----------|
+| **Claude Cowork** | Type `/run-matrix:build` — or type: `Read START.md and begin the build` |
+| **Claude Code** | Type `/run-matrix:build` — or type: `Read START.md and begin the build` |
+| **Cursor** | Open START.md and tell the agent: `Read this file and begin the build` |
+| **Windsurf** | Open START.md and tell the agent: `Read this file and begin the build` |
+| **Any other agent** | Tell your agent: `Read START.md and follow the instructions` |
+
+The instruction is always the same: **read START.md, then build phase by phase.**
 
 ## Works on Any AI Agent
 
@@ -40,8 +54,8 @@ This is not a plugin for one tool. It's a markdown file that any AI coding agent
 
 | Platform | How It Works |
 |----------|-------------|
-| **Claude Code** | Installs as a skill — type `/run-matrix:go` |
-| **Claude Cowork** | Install as a plugin via GitHub URL |
+| **Claude Code** | Installs as a skill — `/run-matrix:go` to plan, `/run-matrix:build` to build |
+| **Claude Cowork** | Install as a plugin — `/run-matrix:go` to plan, `/run-matrix:build` to build |
 | **Cursor** | Loads as a rule in `.cursor/rules/` |
 | **Windsurf** | Loads as a rule in `.windsurf/rules/` |
 | **OpenAI Codex** | Reads `AGENTS.md` automatically |
