@@ -2083,8 +2083,19 @@ Before starting any task:
 - [ ] All screens from the spec built as real pages with mock data
 - [ ] Navigation works end-to-end (homepage → create flow → checkout → dashboard)
 - [ ] Responsive, styled, feels like the real app
+- [ ] **Start the preview** — see checkpoint below
 
-**🛑 CHECKPOINT — app runs on localhost and the user can click through the full flow. Get approval on look and feel before wiring real services.**
+**🛑 CHECKPOINT — Before asking for approval, you must give the user a way to see the app:**
+
+**For web apps:** Start the dev server yourself (run the start/dev command). Then give the user the clickable localhost URL (e.g., `http://localhost:5173`). Do not tell the user to run terminal commands — start it for them.
+
+**For mobile apps (Expo/React Native):** Start the Expo dev server yourself and give the user the QR code or Expo Go link. If a simulator is available, launch it. Provide step-by-step instructions with exact buttons to tap if the user needs to open it on their phone.
+
+**For both:** If the app has both web and mobile surfaces, start both and provide links/instructions for each.
+
+**Then ask:** "Here's your app running — click the link to see it. Look through the screens and let me know if you'd like anything changed in the design, layout, or flow before I wire real services in Phase 2."
+
+Do not describe what the app looks like. Do not paste build stats. The user should see it for themselves.
 
 ### Phase 2 — Wiring
 > Goal: wire only what Phase 3 depends on — typically database and auth. Other services (payments, email, etc.) get wired when the story that needs them comes up in Phase 3 or 4. Do not send the user on an account setup marathon before features exist.
@@ -2105,14 +2116,14 @@ Before starting any task:
 - [ ] [Must Have story 1]
 - [ ] [Must Have story N]
 
-**🛑 CHECKPOINT — core flow works end-to-end on localhost with real services. Ask the user to test before proceeding.**
+**🛑 CHECKPOINT — core flow works end-to-end with real services. Make sure the dev server is running and give the user the link. Ask them to test the core flow themselves before proceeding.**
 
 ### Phase 4 — Core Product
 > Should Have stories. Only start after Phase 3 is complete and tested.
 - [ ] [Should Have story 1]
 - [ ] **Regression check:** Re-run all Phase 3 tests. Nothing from the nucleus broke.
 
-**🛑 CHECKPOINT — all Should Have stories working. Ask the user to test before polish phase.**
+**🛑 CHECKPOINT — all Should Have stories working. Make sure the dev server is running and give the user the link. Ask them to test before the polish phase.**
 
 ### Phase 5 — Polish & Launch Prep
 - [ ] Error states and loading states on all key flows
