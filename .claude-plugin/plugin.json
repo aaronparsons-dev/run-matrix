@@ -1,0 +1,14 @@
+{
+  "name": "run-matrix",
+  "version": "1.0.0",
+  "description": "A runbook for AI agents — takes an app idea and turns it into a fully planned, buildable project with spec, architecture, roadmap, and launch checklist. From idea to production launch.",
+  "author": "Aaron E. Parsons",
+  "license": "MIT",
+  "skills": [
+    {
+      "name": "run-matrix",
+      "description": "Run the App Decision Matrix — plan an app from idea to production",
+      "path": ".claude/skills/run-matrix/SKILL.md"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+---
+description: "Run the App Decision Matrix — plan an app from idea to production launch"
+globs: ""
+alwaysApply: false
+---
+
+Read and execute `RUN_MATRIX.md` in the project root. Follow every instruction in that file. Do not summarize it. Do not explain it. Execute it.
+
+When a user says "run the matrix", "plan my app", or describes an app idea — read `RUN_MATRIX.md` and follow its instructions from the top.
