@@ -1,5 +1,5 @@
 ---
-name: run-matrix
+name: start
 description: "Run the App Decision Matrix — tell it your app idea and it handles everything from planning through build to production launch. Plans the stack, generates the spec, then guides the build agent phase by phase until your app is live."
 ---
 
