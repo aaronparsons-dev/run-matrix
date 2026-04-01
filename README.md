@@ -51,7 +51,46 @@ This is not a plugin for one tool. It's a markdown file that any AI coding agent
 
 ## Install
 
-### Option 1 — Clone and run
+### Claude Code (plugin)
+
+```bash
+# Add the repo as a plugin marketplace
+/plugin marketplace add https://github.com/aaronparsons-dev/run-matrix.git
+
+# Install the plugin
+/plugin install run-matrix@run-matrix
+```
+
+Then type `/run-matrix:run-matrix` to start, or just describe your app idea — Claude will know to use it.
+
+### Claude Cowork (desktop app)
+
+1. Click the **+** button next to the prompt box
+2. Select **Plugins** > **Add plugin**
+3. Add `https://github.com/aaronparsons-dev/run-matrix` as a marketplace
+4. Install **run-matrix**
+
+### Cursor
+
+Clone the repo into your project, or copy `.cursor/rules/run-matrix.md` and `RUN_MATRIX.md` into your project root.
+
+### Windsurf
+
+Clone the repo into your project, or copy `.windsurf/rules/run-matrix.md` and `RUN_MATRIX.md` into your project root.
+
+### OpenAI Codex
+
+Clone the repo into your project. Codex reads `AGENTS.md` automatically.
+
+### Gemini CLI
+
+Clone the repo into your project. Gemini reads `GEMINI.md` automatically.
+
+### GitHub Copilot
+
+Clone the repo into your project. Copilot reads `.github/copilot-instructions.md` automatically.
+
+### Any other agent
 
 ```bash
 git clone https://github.com/aaronparsons-dev/run-matrix.git
@@ -60,17 +99,19 @@ cd run-matrix
 
 Then tell your AI agent: **"Read RUN_MATRIX.md and follow the instructions."**
 
-### Option 2 — Install as a Claude Code plugin
+### Install script (alternative)
 
 ```bash
-claude plugin add https://github.com/aaronparsons-dev/run-matrix
+git clone https://github.com/aaronparsons-dev/run-matrix.git
+cd run-matrix
+
+# Install for a specific platform
+./install.sh claude              # Global Claude Code skill
+./install.sh cursor ~/my-project # Add to a project
+./install.sh all ~/my-project    # All platforms at once
 ```
 
-Then type `/run-matrix` in any Claude Code session.
-
-### Option 3 — Copy into any project
-
-Copy `RUN_MATRIX.md` into your project root. Copy the platform config folder for your tool (`.cursor/rules/`, `.windsurf/rules/`, etc.) if you want native integration. Or just tell your agent to read the file.
+Run `./install.sh` with no arguments to see all options.
 
 ## What Gets Built
 

@@ -1,14 +1,12 @@
 {
   "name": "run-matrix",
   "version": "1.0.0",
-  "description": "A runbook for AI agents — tell it your app idea and it handles everything from planning through build to production launch. It plans the stack, generates the spec, then guides the build agent phase by phase with self-checking loops until your app is live.",
-  "author": "Aaron E. Parsons",
+  "description": "A runbook for AI agents — tell it your app idea and it handles everything from planning through build to production launch. Plans the stack, generates the spec, then guides the build agent phase by phase with self-checking loops until your app is live.",
+  "author": {
+    "name": "Aaron E. Parsons"
+  },
   "license": "MIT",
-  "skills": [
-    {
-      "name": "run-matrix",
-      "description": "Run the App Decision Matrix — plan an app from idea to production",
-      "path": ".claude/skills/run-matrix/SKILL.md"
-    }
-  ]
+  "homepage": "https://github.com/aaronparsons-dev/run-matrix",
+  "repository": "https://github.com/aaronparsons-dev/run-matrix",
+  "keywords": ["runbook", "ai-agents", "vibe-coding", "app-development", "launch"]
 }
