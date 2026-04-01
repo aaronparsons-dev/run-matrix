@@ -65,6 +65,8 @@ Then type `/run-matrix:run-matrix` to start, or just describe your app idea — 
 
 ### Claude Cowork (desktop app)
 
+**Install:**
+
 1. Open Claude Desktop
 2. Click **Cowork** tab at the top
 3. Click **Customize** in the left sidebar
@@ -74,6 +76,16 @@ Then type `/run-matrix:run-matrix` to start, or just describe your app idea — 
 7. Click **Add**
 8. Find **run-matrix** in the marketplace list
 9. Click **Install**
+
+**Add to your conversation:**
+
+10. In any Cowork conversation, click **+** next to the prompt box
+11. Find **run-matrix** under **Plugins / Personal**
+12. Click it to add it to the conversation
+
+**Use it:**
+
+Type `/run-matrix` and describe your app idea. Or just describe your app idea — the plugin will activate automatically.
 
 ### Cursor
 
