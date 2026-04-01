@@ -65,10 +65,15 @@ Then type `/run-matrix:run-matrix` to start, or just describe your app idea — 
 
 ### Claude Cowork (desktop app)
 
-1. Click the **+** button next to the prompt box
-2. Select **Plugins** > **Add plugin**
-3. Add `https://github.com/aaronparsons-dev/run-matrix` as a marketplace
-4. Install **run-matrix**
+1. Open Claude Desktop
+2. Click **Cowork** tab at the top
+3. Click **Customize** in the left sidebar
+4. Click **+**
+5. Select **Add marketplace from GitHub**
+6. Paste `https://github.com/aaronparsons-dev/run-matrix`
+7. Click **Add**
+8. Find **run-matrix** in the marketplace list
+9. Click **Install**
 
 ### Cursor
 
