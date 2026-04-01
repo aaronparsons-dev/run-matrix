@@ -54,7 +54,7 @@ This is not a plugin for one tool. It's a markdown file that any AI coding agent
 ### Option 1 — Clone and run
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/run-matrix.git
+git clone https://github.com/aaronparsons-dev/run-matrix.git
 cd run-matrix
 ```
 
@@ -63,7 +63,7 @@ Then tell your AI agent: **"Read RUN_MATRIX.md and follow the instructions."**
 ### Option 2 — Install as a Claude Code plugin
 
 ```bash
-claude plugin add https://github.com/YOUR_USERNAME/run-matrix
+claude plugin add https://github.com/aaronparsons-dev/run-matrix
 ```
 
 Then type `/run-matrix` in any Claude Code session.
